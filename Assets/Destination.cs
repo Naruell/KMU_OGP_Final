@@ -5,6 +5,7 @@ using UnityEngine;
 public class Destination : MonoBehaviour
 {
     public GameObject DestroyTarget;
+    public GameObject EnableTarget;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class Destination : MonoBehaviour
         {
 
             Destroy(DestroyTarget);
+            EnableTarget.SetActive(true);
 
             EnemyManager.Instance.SetEnemyIdle();
         }

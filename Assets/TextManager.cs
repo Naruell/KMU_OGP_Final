@@ -32,6 +32,6 @@ public class TextManager : MonoBehaviour
 
         yield return new WaitForSeconds(Duration);
 
-        text.fontSize = 22;
+        text.fontSize = 60;
     }
 }
