@@ -32,7 +32,6 @@ public class CCTV : MonoBehaviour
 
     private void Update()
     {
-
         if (rotateDirection == 1 && currentAngle >= maxAngle)
         {
             currentAngle = maxAngle;

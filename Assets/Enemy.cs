@@ -85,16 +85,19 @@ public class Enemy : MonoBehaviour
 
         switch (currentState)
         {
+            // 일반 모드일 때
             case EEnemyState.Idle:
                 {
                     slight.color = Color.white;
                     slight.type = UnityEngine.LightType.Spot;
+                    // 플레이어를 발견했다면
                     if (targetList.Contains(Player.Instance.Collider))
                     {
                         currentState = EEnemyState.Found;
                     }
 
-                    if (agent.enabled && agent.isOnNavMesh && PatrolPoints.Count > 0)
+                    // 
+                    else if (agent.enabled && agent.isOnNavMesh && PatrolPoints.Count > 0)
                     {
                         if (Vector3.Distance(transform.position, PatrolPoints[currentPatrolIndex].transform.position) <= EnemyManager.Instance.PatrolReachDistance)
                         {
